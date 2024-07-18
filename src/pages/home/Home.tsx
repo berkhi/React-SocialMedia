@@ -31,174 +31,105 @@ function Home() {
             <li className="nav-item"><a href="notification.html" className="nav-link">docs</a></li>
             <li className="nav-item"><a href="#" className="nav-link d-md-none">growl</a></li>
             <li className="nav-item"><a href="#" className="nav-link d-md-none">logout</a></li>
-
           </ul>
-
         </div>
       </nav>
       <div className="modal fade" id="modalview">
         <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-
           <div className="modal-content">
             <div className="modal-header">
               <div className="modal-title h4">Messages</div>
-
               <button type="button" className="close" data-dismiss="modal">&times;</button>
             </div>
             <div className="modal-body">
               <ul className="list-unstyled">
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-dhg.png" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
                 <hr className="my-3" />
-
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-fat.jpg" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Mark Otto and <strong> 3 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
-
-
                 <hr className="my-3" />
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-mdo.png" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Archer andu and <strong> 5 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
-
                 <hr className="my-3" />
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-dhg.png" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
-
                 <hr className="my-3" />
-
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-fat.jpg" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Mark Otto and <strong> 3 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
-
-
                 <hr className="my-3" />
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-mdo.png" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Archer andu and <strong> 5 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
-
-
                 <hr className="my-3" />
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-dhg.png" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Jchob Thunder and <strong> 1 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
-
                 <hr className="my-3" />
-
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-fat.jpg" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Mark Otto and <strong> 3 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
-
                 <hr className="my-3" />
-
-
                 <a href="#" className="text-decoration-none">
                   <li className="media hover-media">
-
                     <img src="/img/avatar-mdo.png" alt="img" width="60px" height="60px" className="rounded-circle mr-3" />
-
                     <div className="media-body text-dark">
                       <h6 className="media-header">Archer andu and <strong> 5 others</strong></h6>
                       <p className="media-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
                     </div>
-
                   </li>
                 </a>
               </ul>
@@ -211,13 +142,10 @@ function Home() {
           <div className="col-12 col-lg-3">
             <HomeLeft user={userProfile} />
           </div>
-
           <div className="col-12 col-lg-6" >
             <HomeContent />
           </div>
-
           <br /> <br /> <br /><br /> <br /> <br />
-
           <div className="col-12 col-lg-3">
             <HomeRight />
           </div>

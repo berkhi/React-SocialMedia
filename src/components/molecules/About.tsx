@@ -1,6 +1,12 @@
 import React from "react";
 
-function About() {
+interface IAboutProps {
+	bornDate: number;
+	phone: string;
+	address: string;
+}
+
+function About(props: IAboutProps) {
 	return (
 		<>
 			<div className="card shadow-sm card-left2 mb-4">
@@ -14,22 +20,20 @@ function About() {
 						</small>
 					</h5>
 					<p className="card-text">
-						<i
-							className="fas fa-calendar-week mr-2"
-							style={{ width: "30px" }}></i>
-						Doğum Tarihi:
+						<i className="fas fa-calendar-week mr-2" style={{ width: "30px" }}></i>
+						Doğum Tarihi: {props.bornDate}
 					</p>
 					<p className="card-text">
 						<i className="far fa-building mr-2" style={{ width: "30px" }}></i>
-						Ünvan:
+						Ünvan: { }
 					</p>
 					<p className="card-text">
 						<i className="fas fa-home mr-2" style={{ width: "30px" }}></i>
-						İletişim:
+						İletişim: {props.phone}
 					</p>
 					<p className="card-text">
 						<i className="fas fa-map-marker mr-2" style={{ width: "30px" }}></i>
-						Adres:
+						Adres: {props.address}
 					</p>
 				</div>
 			</div>
