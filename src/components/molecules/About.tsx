@@ -1,11 +1,9 @@
 import React from "react";
-
-interface IAboutProps {
-	bornDate: number;
-	phone: string;
-	address: string;
+interface IAboutProps{
+	bornDate: number
+	phone: string
+	address: string
 }
-
 function About(props: IAboutProps) {
 	return (
 		<>
@@ -20,12 +18,14 @@ function About(props: IAboutProps) {
 						</small>
 					</h5>
 					<p className="card-text">
-						<i className="fas fa-calendar-week mr-2" style={{ width: "30px" }}></i>
+						<i
+							className="fas fa-calendar-week mr-2"
+							style={{ width: "30px" }}></i>
 						Doğum Tarihi: {props.bornDate}
 					</p>
 					<p className="card-text">
 						<i className="far fa-building mr-2" style={{ width: "30px" }}></i>
-						Ünvan: { }
+						Ünvan:
 					</p>
 					<p className="card-text">
 						<i className="fas fa-home mr-2" style={{ width: "30px" }}></i>
