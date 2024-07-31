@@ -3,6 +3,7 @@ import { IRegister } from "../../components/models/IRegister";
 import { ILogin } from "../../components/models/ILogin";
 import { IResponse } from "../../components/models/IResponse";
 import swal from 'sweetalert';
+import Rest from '../../config/RestApis';
 const initialAuthState={
     token: '',
     user: [],
@@ -16,7 +17,7 @@ const initialAuthState={
 export const fetchRegister = createAsyncThunk(
     'auth/fetchRegister',
     async(payload: IRegister)=>{
-        const response =  await fetch('http://localhost:9090/user/register',{
+        const response =  await fetch(Rest.authService+'/register',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +37,7 @@ export const fetchLogin = createAsyncThunk(
     'auth/fetchLogin',
     async(payload: ILogin)=>{
         try{
-        const response =  await fetch('http://localhost:9090/user/login',{
+        const response =  await fetch(Rest.authService+'/login',{
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -58,7 +59,16 @@ export const fetchLogin = createAsyncThunk(
 const authSlice = createSlice({
     name: 'auth',
     initialState: initialAuthState,
-    reducers:{},
+    reducers:{
+        setToken(state,action: PayloadAction<string>){
+            state.isAuth = true;
+            state.token = action.payload;
+        },
+        clearToken(state){
+            state.isAuth = false;
+            state.token = '';
+        }
+    },
     extraReducers: (build)=>{
         build.addCase(fetchRegister.pending,(state)=>{
             state.isLoadingRegister = true;
@@ -74,6 +84,7 @@ const authSlice = createSlice({
             if(action.payload.code === 200){
                 state.token = action.payload.data;
                 state.isAuth = true;
+                localStorage.setItem('token',action.payload.data);
             }else
                 swal('Hata!',action.payload.message,'error');
             
@@ -83,5 +94,7 @@ const authSlice = createSlice({
         });
     }
 });
-
+export const {
+    setToken,clearToken
+} = authSlice.actions;
 export default authSlice.reducer;

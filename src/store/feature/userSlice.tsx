@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { IResponse } from "../../components/models/IResponse"
-
+import Rest from '../../config/RestApis';
 
 export interface IUserProfile{
   name: string
@@ -36,7 +36,7 @@ const initialUserState: IUserState = {
 export const fetchgetUserProfile = createAsyncThunk(
     'user/fetchgetUserProfile',
     async(payload: string)=>{
-        const result = await fetch('http://localhost:9090/user/get-profile?token='+payload)
+        const result = await fetch(Rest.userService+'/get-profile?token='+payload)
         .then(data=>data.json());
         return result;
     }
@@ -48,7 +48,7 @@ export interface IFetchSearchUserPayload{
 export const fetchSearchUserList = createAsyncThunk(
     'user/fetchSearchUserList', 
    async (payload:IFetchSearchUserPayload)=>{
-        const res = fetch('http://localhost:9090/user/search-user',{
+        const res = fetch(Rest.userService+'/search-user',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -61,7 +61,38 @@ export const fetchSearchUserList = createAsyncThunk(
         return res;
    }
 )
-
+interface IFetchUpdateProfilePayload{
+                email: string,
+                avatar: string,
+                name: string,
+                about: string,
+                bornDate: number,
+                phone: string,
+                address: string,
+                token: string
+}
+export const fetchUpdateProfile = createAsyncThunk(
+    'user/fetchUpdateProfile',
+    async (payload: IFetchUpdateProfilePayload)=>{
+        const res = await fetch(Rest.userService+'/edit-profile',{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: payload.email,
+                avatar: payload.avatar,
+                name: payload.name,
+                about: payload.about,
+                bornDate: payload.bornDate,
+                phone: payload.phone,
+                address: payload.address,
+                token: payload.token
+            })
+        }).then(data=>data.json());
+        return res;
+    }
+)
 const userSlice = createSlice({
     name: 'user',
     initialState: initialUserState,
@@ -74,6 +105,8 @@ const userSlice = createSlice({
         build.addCase(fetchgetUserProfile.fulfilled,(state,action: PayloadAction<IResponse>)=>{
             if(action.payload.code===200){
                 state.userProfile = action.payload.data;
+            }else{
+                
             }
         });
         build.addCase(fetchSearchUserList.fulfilled,(state,action:PayloadAction<IResponse>)=>{
